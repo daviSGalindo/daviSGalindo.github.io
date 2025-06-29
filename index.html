@@ -22,9 +22,14 @@
         .transition-all-300 {
             transition: all 0.3s ease-in-out;
         }
-        /* Estilo para o botão de idioma ativo */
-        .language-btn.active {
-            background-color: #4b5563; /* Cinza mais escuro para o botão ativo */
+        /* Estilo para o botão de idioma ativo (para o tema claro - roxo) */
+        .language-btn.active.light-theme-btn {
+            background-color: #a855f7; /* Cor roxa para o botão ativo no tema claro */
+            color: white;
+        }
+        /* Estilo para o botão de idioma ativo (para o tema escuro - cinza) */
+        .language-btn.active.dark-theme-btn {
+            background-color: #4b5563; /* Cinza mais escuro para o botão ativo no tema escuro */
             color: white;
         }
     </style>
@@ -32,36 +37,41 @@
 <body class="antialiased bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
 
     <!-- Cabeçalho Principal -->
-    <header class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-900 p-6 shadow-lg rounded-b-lg dark:from-gray-900 dark:to-gray-950 dark:text-white transition-colors duration-500">
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 shadow-lg rounded-b-lg
+                   dark:from-gray-900 dark:to-gray-950 dark:text-white transition-colors duration-500">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <!-- Foto de Perfil -->
             <div class="mb-4 md:mb-0 md:mr-6">
-                <img src="https://placehold.co/120x120/2d3748/ffffff?text=DG" alt="Sua Foto de Perfil"
-                     class="w-32 h-32 rounded-full border-4 border-gray-300 shadow-md object-cover dark:border-gray-600 transition-colors duration-500">
+                <img src="https://placehold.co/120x120/a855f7/ffffff?text=DG" alt="Sua Foto de Perfil"
+                     class="w-32 h-32 rounded-full border-4 border-white shadow-md object-cover
+                            dark:border-gray-600 transition-colors duration-500">
             </div>
 
             <!-- Informações Pessoais -->
             <div class="text-center md:text-left flex-grow">
                 <h1 class="text-4xl font-bold mb-1" data-lang-key="name">Davi Silva Galindo</h1>
                 <p class="text-xl font-light mb-2" data-lang-key="role">Desenvolvedor Web Junior</p>
-                <p class="text-md mb-2 text-gray-700 dark:text-gray-300 transition-colors duration-500" data-lang-key="tagline">Construindo soluções inovadoras com tecnologia.</p>
+                <p class="text-md mb-2 text-white dark:text-gray-300 transition-colors duration-500" data-lang-key="tagline">Construindo soluções inovadoras com tecnologia.</p>
                 <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
                     <a href="https://github.com/daviSGalindo" target="_blank"
-                       class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full shadow-md hover:bg-gray-300 transition-all-300 flex items-center hover-scale-103 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition-colors duration-500">
+                       class="bg-white text-blue-600 px-4 py-2 rounded-full shadow-md hover:bg-gray-100 transition-all-300 flex items-center hover-scale-103
+                              dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition-colors duration-500">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.165 6.84 9.49C9.02 21.65 9.09 21.43 9.09 21.22V19.7c-2.812.612-3.328-1.157-3.328-1.157-.468-1.189-1.143-1.503-1.143-1.503-.93-.637.072-.625.072-.625 1.026.072 1.565 1.054 1.565 1.054.91 1.56 2.383 1.111 2.96.848.092-.66.357-1.111.652-1.365-2.268-.258-4.66-1.134-4.66-5.045 0-1.112.39-2.023 1.028-2.73-.104-.258-.445-1.29.097-2.693 0 0 .84-.27 2.75 1.04.79-.22 1.62-.33 2.45-.33.83 0 1.66.11 2.45.33 1.91-1.31 2.75-1.04 2.75-1.04.542 1.403.2 2.435.097 2.693.638.707 1.028 1.618 1.028 2.73 0 3.92-2.396 4.782-4.668 5.035.36.309.675.92.675 1.85V21.22c0 .21.07.43.25.61C20.135 20.165 23 16.419 23 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
                         </svg>
                         GitHub
                     </a>
                     <a href="https://www.linkedin.com/in/davi-galindo-b686962a9/" target="_blank"
-                       class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full shadow-md hover:bg-gray-300 transition-all-300 flex items-center hover-scale-103 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition-colors duration-500">
+                       class="bg-white text-blue-600 px-4 py-2 rounded-full shadow-md hover:bg-gray-100 transition-all-300 flex items-center hover-scale-103
+                              dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition-colors duration-500">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M20.447 20.452h-3.554v-5.629c0-1.31-.024-2.997-1.824-2.997-1.826 0-2.108 1.423-2.108 2.906v5.72h-3.554V9.293h3.416v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.368 4.267 5.455v6.286zM7.915 6.42A2.41 2.41 0 015.503 3.99A2.41 2.41 0 017.915 1.58a2.41 2.41 0 012.412 2.41 2.41 2.41 0 01-2.412 2.41zM6.173 9.293H9.727V20.45h-3.554z" />
                         </svg>
                         LinkedIn
                     </a>
                     <a href="mailto:Davigalindogs@gmail.com"
-                       class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full shadow-md hover:bg-gray-300 transition-all-300 flex items-center hover-scale-103 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition-colors duration-500">
+                       class="bg-white text-blue-600 px-4 py-2 rounded-full shadow-md hover:bg-gray-100 transition-all-300 flex items-center hover-scale-103
+                              dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition-colors duration-500">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M2.003 5.884L10 11l8-5.116C16.945 4.792 14.549 4 12 4c-2.549 0-4.945.792-7.997 1.884zM22 8.5V18c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8.5L12 14l10-5.5z" />
                         </svg>
@@ -70,62 +80,79 @@
                 </div>
             </div>
              <!-- Botões de Troca de Idioma e Tema -->
-            <div class="mt-4 md:mt-0 flex items-center space-x-2 bg-gray-300 bg-opacity-70 rounded-full p-1 shadow-inner dark:bg-gray-700 dark:bg-opacity-70 transition-colors duration-500">
-                <button id="lang-pt" class="language-btn px-3 py-1 text-sm font-medium rounded-full text-gray-700 hover:bg-gray-300 active transition-colors duration-200">PT</button>
-                <button id="lang-en" class="language-btn px-3 py-1 text-sm font-medium rounded-full text-gray-700 hover:bg-gray-300 transition-colors duration-200">EN</button>
-                <button id="theme-toggle" class="px-3 py-1 text-sm font-medium rounded-full text-white bg-gray-600 transition-colors duration-200 ml-2"></button>
+            <div class="mt-4 md:mt-0 flex items-center space-x-2 bg-white bg-opacity-20 rounded-full p-1 shadow-inner
+                        dark:bg-gray-700 dark:bg-opacity-70 transition-colors duration-500">
+                <button id="lang-pt" class="language-btn px-3 py-1 text-sm font-medium rounded-full text-white bg-blue-600 active transition-colors duration-200">PT</button>
+                <button id="lang-en" class="language-btn px-3 py-1 text-sm font-medium rounded-full text-white hover:bg-blue-500 transition-colors duration-200">EN</button>
+                <button id="theme-toggle" class="px-3 py-1 text-sm font-medium rounded-full ml-2 transition-colors duration-200"></button>
             </div>
         </div>
     </header>
 
     <!-- Seção Sobre Mim -->
-    <section class="container mx-auto p-6 my-8 bg-white rounded-lg shadow-md transition-all-300 hover-shadow-lg dark:bg-gray-800 transition-colors duration-500">
-        <h2 class="text-3xl font-semibold text-center mb-6 text-gray-800 dark:text-white transition-colors duration-500" data-lang-key="aboutMeTitle">Sobre Mim</h2>
+    <section class="container mx-auto p-6 my-8 bg-white rounded-lg shadow-md transition-all-300 hover-shadow-lg
+                   dark:bg-gray-800 transition-colors duration-500">
+        <h2 class="text-3xl font-semibold text-center mb-6 text-blue-600 dark:text-white transition-colors duration-500" data-lang-key="aboutMeTitle">Sobre Mim</h2>
         <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 transition-colors duration-500" data-lang-key="aboutMeText">
             Sou Davi Silva Galindo, um desenvolvedor web junior apaixonado por tecnologia e em busca de minha primeira experiência profissional na área. Atualmente, sou estudante de Sistemas de Informação na Universidade Federal Fluminense (UFF), onde aprofundo meus conhecimentos em diversas vertentes do desenvolvimento. Possuo soft skills em administração, adquiridas através de um curso técnico, que me permitem ter uma visão estratégica e organizacional na resolução de problemas. Estou sempre buscando aprender e aplicar novas tecnologias para criar soluções eficientes e de alta qualidade.
         </p>
     </section>
 
     <!-- Seção de Habilidades -->
-    <section class="container mx-auto p-6 my-8 bg-white rounded-lg shadow-md transition-all-300 hover-shadow-lg dark:bg-gray-800 transition-colors duration-500">
-        <h2 class="text-3xl font-semibold text-center mb-6 text-gray-800 dark:text-white transition-colors duration-500" data-lang-key="skillsTitle">Habilidades</h2>
+    <section class="container mx-auto p-6 my-8 bg-white rounded-lg shadow-md transition-all-300 hover-shadow-lg
+                   dark:bg-gray-800 transition-colors duration-500">
+        <h2 class="text-3xl font-semibold text-center mb-6 text-blue-600 dark:text-white transition-colors duration-500" data-lang-key="skillsTitle">Habilidades</h2>
         <div class="flex flex-wrap justify-center gap-4">
-            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm font-medium dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">JavaScript</span>
-            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm font-medium dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">React</span>
-            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm font-medium dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Node.js</span>
-            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm font-medium dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Python</span>
-            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm font-medium dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">SQL</span>
-            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full shadow-sm font-medium dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Git/GitHub</span>
-            <span class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Tailwind CSS</span>
+            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full shadow-sm font-medium
+                         dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">JavaScript</span>
+            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full shadow-sm font-medium
+                         dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">React</span>
+            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full shadow-sm font-medium
+                         dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Node.js</span>
+            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full shadow-sm font-medium
+                         dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Python</span>
+            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full shadow-sm font-medium
+                         dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">SQL</span>
+            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full shadow-sm font-medium
+                         dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Git/GitHub</span>
+            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold
+                         dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Tailwind CSS</span>
             <!-- Adicione mais habilidades aqui -->
         </div>
     </section>
 
     <!-- Seção de Projetos -->
-    <section class="container mx-auto p-6 my-8 bg-gray-800 rounded-lg shadow-md dark:bg-gray-800 transition-colors duration-500">
-        <h2 class="text-3xl font-semibold text-center mb-8 text-gray-800 dark:text-white transition-colors duration-500" data-lang-key="projectsTitle">Meus Projetos</h2>
+    <section class="container mx-auto p-6 my-8 bg-white rounded-lg shadow-md transition-all-300 hover-shadow-lg
+                   dark:bg-gray-800 transition-colors duration-500">
+        <h2 class="text-3xl font-semibold text-center mb-8 text-blue-600 dark:text-white transition-colors duration-500" data-lang-key="projectsTitle">Meus Projetos</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <!-- Card de Projeto 1 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all-300 hover-scale-103 dark:bg-gray-900 dark:border-gray-700 transition-colors duration-500">
-                <img src="https://placehold.co/400x250/2d3748/ffffff?text=Projeto+Web" alt="Projeto Web" class="w-full h-48 object-cover">
+            <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all-300 hover-scale-103
+                        dark:bg-gray-900 dark:border-gray-700 transition-colors duration-500">
+                <img src="https://placehold.co/400x250/e0e7ff/3f51b5?text=Projeto+Web" alt="Projeto Web" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white transition-colors duration-500" data-lang-key="project1Title">Nome do Projeto 1</h3>
+                    <h3 class="text-xl font-bold mb-2 text-blue-700 dark:text-white transition-colors duration-500" data-lang-key="project1Title">Nome do Projeto 1</h3>
                     <p class="text-gray-700 mb-4 text-sm dark:text-gray-300 transition-colors duration-500" data-lang-key="project1Description">
                         Uma breve descrição do Projeto 1, destacando as principais funcionalidades e o problema que ele resolve.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">React</span>
-                        <span class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Node.js</span>
-                        <span class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">MongoDB</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold
+                                     dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">React</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold
+                                     dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Node.js</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold
+                                     dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">MongoDB</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <a href="https://github.com/seu-usuario/nome-do-projeto-1" target="_blank"
-                           class="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all-300 text-sm hover-scale-103 dark:bg-gray-600 dark:hover:bg-gray-500 transition-colors duration-500" data-lang-key="viewGithub">
+                           class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-all-300 text-sm hover-scale-103
+                                  dark:bg-gray-600 dark:hover:bg-gray-500 transition-colors duration-500" data-lang-key="viewGithub">
                            Ver no GitHub
                         </a>
                         <a href="#" target="_blank"
-                           class="text-gray-600 hover:underline transition-all-300 text-sm hover-scale-103 dark:text-gray-400 transition-colors duration-500" data-lang-key="viewDemo">
+                           class="text-blue-600 hover:underline transition-all-300 text-sm hover-scale-103
+                                  dark:text-gray-400 transition-colors duration-500" data-lang-key="viewDemo">
                            Ver Demo
                         </a>
                     </div>
@@ -133,24 +160,29 @@
             </div>
 
             <!-- Card de Projeto 2 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all-300 hover-scale-103 dark:bg-gray-900 dark:border-gray-700 transition-colors duration-500">
-                <img src="https://placehold.co/400x250/2d3748/ffffff?text=App+Mobile" alt="App Mobile" class="w-full h-48 object-cover">
+            <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all-300 hover-scale-103
+                        dark:bg-gray-900 dark:border-gray-700 transition-colors duration-500">
+                <img src="https://placehold.co/400x250/fff3e0/ff9800?text=App+Mobile" alt="App Mobile" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white transition-colors duration-500" data-lang-key="project2Title">Nome do Projeto 2</h3>
+                    <h3 class="text-xl font-bold mb-2 text-orange-700 dark:text-white transition-colors duration-500" data-lang-key="project2Title">Nome do Projeto 2</h3>
                     <p class="text-gray-700 mb-4 text-sm dark:text-gray-300 transition-colors duration-500" data-lang-key="project2Description">
                         Uma breve descrição do Projeto 2, suas principais funcionalidades e as tecnologias utilizadas.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Flutter</span>
-                        <span class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Firebase</span>
+                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full font-semibold
+                                     dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Flutter</span>
+                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full font-semibold
+                                     dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Firebase</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <a href="https://github.com/seu-usuario/nome-do-projeto-2" target="_blank"
-                           class="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all-300 text-sm hover-scale-103 dark:bg-gray-600 dark:hover:bg-gray-500 transition-colors duration-500" data-lang-key="viewGithub">
+                           class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-all-300 text-sm hover-scale-103
+                                  dark:bg-gray-600 dark:hover:bg-gray-500 transition-colors duration-500" data-lang-key="viewGithub">
                            Ver no GitHub
                         </a>
                         <a href="#" target="_blank"
-                           class="text-gray-600 hover:underline transition-all-300 text-sm hover-scale-103 dark:text-gray-400 transition-colors duration-500" data-lang-key="viewDemo">
+                           class="text-blue-600 hover:underline transition-all-300 text-sm hover-scale-103
+                                  dark:text-gray-400 transition-colors duration-500" data-lang-key="viewDemo">
                            Ver Demo
                         </a>
                     </div>
@@ -158,21 +190,26 @@
             </div>
 
             <!-- Card de Projeto 3 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all-300 hover-scale-103 dark:bg-gray-900 dark:border-gray-700 transition-colors duration-500">
-                <img src="https://placehold.co/400x250/2d3748/ffffff?text=Análise+Dados" alt="Análise de Dados" class="w-full h-48 object-cover">
+            <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all-300 hover-scale-103
+                        dark:bg-gray-900 dark:border-gray-700 transition-colors duration-500">
+                <img src="https://placehold.co/400x250/e8f5e9/4caf50?text=Análise+Dados" alt="Análise de Dados" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white transition-colors duration-500" data-lang-key="project3Title">Nome do Projeto 3</h3>
+                    <h3 class="text-xl font-bold mb-2 text-green-700 dark:text-white transition-colors duration-500" data-lang-key="project3Title">Nome do Projeto 3</h3>
                     <p class="text-gray-700 mb-4 text-sm dark:text-gray-300 transition-colors duration-500" data-lang-key="project3Description">
                         Uma breve descrição do Projeto 3, com foco nos resultados obtidos ou insights gerados.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Python</span>
-                        <span class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Pandas</span>
-                        <span class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full font-semibold dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Matplotlib</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-semibold
+                                     dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Python</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-semibold
+                                     dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Pandas</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-semibold
+                                     dark:bg-gray-700 dark:text-gray-100 transition-colors duration-500">Matplotlib</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <a href="https://github.com/seu-usuario/nome-do-projeto-3" target="_blank"
-                           class="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all-300 text-sm hover-scale-103 dark:bg-gray-600 dark:hover:bg-gray-500 transition-colors duration-500" data-lang-key="viewGithub">
+                           class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-all-300 text-sm hover-scale-103
+                                  dark:bg-gray-600 dark:hover:bg-gray-500 transition-colors duration-500" data-lang-key="viewGithub">
                            Ver no GitHub
                         </a>
                         <!-- Se não houver demo online, pode remover este link -->
@@ -244,83 +281,120 @@
 
         // Função para aplicar o tema
         function setTheme(theme) {
+            console.log("setTheme called with theme:", theme);
             if (theme === 'dark') {
                 document.documentElement.classList.add('dark');
             } else {
                 document.documentElement.classList.remove('dark');
             }
             localStorage.setItem('theme', theme);
-            updateThemeToggleButtonText(document.documentElement.lang); // Passa o idioma atual
+            console.log("Theme set in localStorage:", localStorage.getItem('theme'));
+            updateThemeToggleButtonText(); 
         }
 
-        // Função para atualizar o texto do botão de tema com base no idioma e tema atual
-        function updateThemeToggleButtonText(currentLang) { // Recebe o idioma como argumento
+        // Função para atualizar o texto e estilo do botão de tema
+        function updateThemeToggleButtonText() {
             const themeToggleButton = document.getElementById('theme-toggle');
-            if (themeToggleButton && translations[currentLang]) { // Garante que translations[currentLang] exista
-                const currentTheme = localStorage.getItem('theme') || 'light';
-                if (currentTheme === 'dark') {
-                    themeToggleButton.textContent = translations[currentLang].lightMode;
-                    themeToggleButton.classList.remove('bg-gray-600', 'hover:bg-gray-500');
-                    themeToggleButton.classList.add('bg-gray-700', 'hover:bg-gray-600');
-                } else {
-                    themeToggleButton.textContent = translations[currentLang].darkMode;
-                    themeToggleButton.classList.remove('bg-gray-700', 'hover:bg-gray-600');
-                    themeToggleButton.classList.add('bg-gray-600', 'hover:bg-gray-500');
-                }
+            const currentLang = localStorage.getItem('selectedLanguage') || 'pt'; 
+            console.log("updateThemeToggleButtonText called. currentLang:", currentLang);
+
+            if (!themeToggleButton || !translations[currentLang]) {
+                console.error("Theme toggle button or translations for current language are not available in updateThemeToggleButtonText.", {themeToggleButton, currentLang, translationsForLang: translations[currentLang]});
+                return;
+            }
+            
+            // Verifica o TEMA ATUAL do HTML (dark class)
+            const currentThemeIsDark = document.documentElement.classList.contains('dark');
+            console.log("Current page theme (is dark?):", currentThemeIsDark);
+
+            // Remove todas as classes de cor e texto anteriores do botão de tema
+            themeToggleButton.classList.remove('bg-gray-600', 'hover:bg-gray-500', 'bg-gray-700', 'hover:bg-gray-600', 'text-white', 'text-gray-800', 'bg-gray-200', 'hover:bg-gray-300', 'bg-blue-600', 'hover:bg-blue-700');
+
+            if (currentThemeIsDark) {
+                // Se o tema atual da página é ESCURO, o botão deve oferecer MODO CLARO
+                themeToggleButton.textContent = translations[currentLang].lightMode;
+                // O estilo do botão deve ser o do MODO ESCURO (cinza escuro)
+                themeToggleButton.classList.add('bg-gray-700', 'hover:bg-gray-600', 'text-white'); 
+                console.log("Button text set to Light Mode, style to Dark Button.");
+            } else {
+                // Se o tema atual da página é CLARO, o botão deve oferecer MODO ESCURO
+                themeToggleButton.textContent = translations[currentLang].darkMode;
+                // O estilo do botão deve ser o do MODO CLARO (roxo/azul do tema original)
+                themeToggleButton.classList.add('bg-blue-600', 'hover:bg-blue-700', 'text-white'); 
+                console.log("Button text set to Dark Mode, style to Light Button (Purple).");
             }
         }
 
-        // Função para aplicar o idioma (modificada para chamar updateThemeToggleButtonText)
+        // Função para aplicar o idioma
         function setLanguage(lang) {
-            // Atualiza os elementos com o atributo data-lang-key
+            console.log("setLanguage called with lang:", lang);
+            if (!translations[lang]) {
+                console.error("Language not found in translations:", lang);
+                return;
+            }
+
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
                 if (translations[lang] && translations[lang][key]) {
-                    element.innerHTML = translations[lang][key]; // Use innerHTML para permitir entidades HTML como &copy; e &#x2764;
+                    element.innerHTML = translations[lang][key];
                 }
             });
 
-            // Atualiza o atributo lang do HTML
             document.documentElement.lang = lang;
-
-            // Define o idioma no localStorage
             localStorage.setItem('selectedLanguage', lang);
+            console.log("Language set in localStorage:", localStorage.getItem('selectedLanguage'));
 
             // Atualiza o estado dos botões de idioma
             document.querySelectorAll('.language-btn').forEach(btn => {
+                // Limpa todas as classes de ativo/inativo para aplicar as novas corretamente
+                btn.classList.remove('active', 'bg-gray-600', 'text-white', 'bg-gray-500', 'text-gray-700', 'bg-blue-600', 'hover:bg-blue-500', 'bg-blue-500', 'hover:bg-blue-600');
+
                 if (btn.id === `lang-${lang}`) {
-                    btn.classList.add('active');
-                    btn.classList.add('bg-gray-600'); /* Cor cinza para o botão ativo */
-                    btn.classList.remove('bg-gray-500');
-                    btn.classList.remove('text-gray-700'); // Garante que o texto fique branco no ativo
-                    btn.classList.add('text-white');
+                    btn.classList.add('active', 'text-white'); // Ativo, texto branco
+                    // Cor do botão de idioma ativo depende do TEMA ATUAL
+                    const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                    if (currentTheme === 'light') { // Tema claro (roxo/azul)
+                        btn.classList.add('bg-blue-600', 'hover:bg-blue-500');
+                    } else { // Tema escuro (cinza)
+                        btn.classList.add('bg-gray-600', 'hover:bg-gray-500');
+                    }
                 } else {
-                    btn.classList.remove('active');
-                    btn.classList.remove('bg-gray-600');
-                    btn.classList.remove('text-white'); // Garante que o texto volte a ser cinza no inativo
-                    btn.classList.add('bg-gray-500');
-                    btn.classList.add('text-gray-700');
+                    btn.classList.add('bg-gray-500', 'text-gray-700'); // Inativo, cinza
+                    // Se estiver no tema claro, os botões inativos podem ter um hover mais suave, mas mantive cinza por consistência no geral
                 }
             });
 
-            updateThemeToggleButtonText(lang); // Garante que o texto do botão de tema seja atualizado com o idioma correto
+            updateThemeToggleButtonText(); // Re-atualiza o botão de tema após mudar o idioma
         }
 
-        // Event Listeners para os botões de idioma e tema
+        // Event Listeners
         document.getElementById('lang-pt').addEventListener('click', () => setLanguage('pt'));
         document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
         document.getElementById('theme-toggle').addEventListener('click', () => {
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            console.log("Theme toggle button clicked!");
+            const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light'; // Inverte o tema
             setTheme(newTheme);
         });
 
-        // Ao carregar a página, verifica o idioma e o tema salvos no localStorage
+        // Ao carregar a página
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLanguage = localStorage.getItem('selectedLanguage') || 'pt';
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            setLanguage(savedLanguage); // Aplica o idioma primeiro
-            setTheme(savedTheme); // Aplica o tema depois
+            console.log("DOMContentLoaded fired.");
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            const initialLang = (savedLanguage && translations[savedLanguage]) ? savedLanguage : 'pt';
+            
+            const savedTheme = localStorage.getItem('theme');
+            const initialTheme = (savedTheme === 'dark' || savedTheme === 'light') ? savedTheme : 'light'; 
+
+            console.log("Initial Lang:", initialLang, "Initial Theme:", initialTheme);
+
+            // 1. Aplica o idioma primeiro. Isso também garante que translations[initialLang] esteja pronto
+            // e setLanguage já chamará updateThemeToggleButtonText com o idioma correto.
+            setLanguage(initialLang); 
+
+            // 2. Aplica o tema. Isso vai definir a classe 'dark' no <html> e chamar updateThemeToggleButtonText
+            // novamente, que agora terá o estado final correto do tema e do idioma.
+            setTheme(initialTheme);
         });
     </script>
 </body>
