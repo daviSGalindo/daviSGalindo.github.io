@@ -21,9 +21,16 @@
         .transition-all-300 {
             transition: all 0.3s ease-in-out;
         }
+        /* Estilos para os botões de idioma */
+        .language-btn {
+            @apply px-3 py-1 text-sm font-medium rounded-full transition-colors duration-200;
+            cursor: pointer;
+        }
         .language-btn.active {
-            background-color: #4b5563;
-            color: white;
+            @apply bg-gray-600 text-white; /* Estilo para o botão ativo */
+        }
+        .language-btn:not(.active) {
+            @apply bg-gray-700 text-gray-300 hover:bg-gray-500; /* Estilo para o botão inativo com hover */
         }
     </style>
 </head>
@@ -65,8 +72,8 @@
                 </div>
             </div>
             <div class="mt-4 md:mt-0 flex items-center space-x-2 bg-gray-700 bg-opacity-70 rounded-full p-1 shadow-inner">
-                <button id="lang-pt" class="language-btn px-3 py-1 text-sm font-medium rounded-full text-white bg-gray-600 active transition-colors duration-200">PT</button>
-                <button id="lang-en" class="language-btn px-3 py-1 text-sm font-medium rounded-full text-white hover:bg-gray-500 transition-colors duration-200">EN</button>
+                <button id="lang-pt" class="language-btn">PT</button>
+                <button id="lang-en" class="language-btn">EN</button>
             </div>
         </div>
     </header>
@@ -110,11 +117,11 @@
                     <div class="flex justify-between items-center">
                         <a href="https://github.com/seu-usuario/nome-do-projeto-1" target="_blank"
                            class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition-all-300 text-sm hover-scale-103" data-lang-key="viewGithub">
-                           Ver no GitHub
+                            Ver no GitHub
                         </a>
                         <a href="#" target="_blank"
                            class="text-gray-400 hover:underline transition-all-300 text-sm hover-scale-103" data-lang-key="viewDemo">
-                           Ver Demo
+                            Ver Demo
                         </a>
                     </div>
                 </div>
@@ -134,11 +141,11 @@
                     <div class="flex justify-between items-center">
                         <a href="https://github.com/seu-usuario/nome-do-projeto-2" target="_blank"
                            class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition-all-300 text-sm hover-scale-103" data-lang-key="viewGithub">
-                           Ver no GitHub
+                            Ver no GitHub
                         </a>
                         <a href="#" target="_blank"
                            class="text-gray-400 hover:underline transition-all-300 text-sm hover-scale-103" data-lang-key="viewDemo">
-                           Ver Demo
+                            Ver Demo
                         </a>
                     </div>
                 </div>
@@ -154,12 +161,11 @@
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-gray-700 text-gray-100 text-xs px-2 py-1 rounded-full font-semibold">--</span>
                         <span class="bg-gray-700 text-gray-100 text-xs px-2 py-1 rounded-full font-semibold">--</span>
-                        <span class="bg-gray-700 text-gray-100 text-xs px-2 py-1 rounded-full font-semibold">--</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <a href="https://github.com/seu-usuario/nome-do-projeto-3" target="_blank"
                            class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition-all-300 text-sm hover-scale-103" data-lang-key="viewGithub">
-                           Ver no GitHub
+                            Ver no GitHub
                         </a>
                     </div>
                 </div>
@@ -168,8 +174,8 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container mx-auto text-center">
+    <footer class="py-6 bg-gray-900 mt-8 rounded-t-lg shadow-inner">
+        <div class="container mx-auto text-center text-gray-400">
             <p data-lang-key="footerCopyright">&copy; 2025 Davi Silva Galindo. Todos os direitos reservados.</p>
             <p class="mt-2 text-sm" data-lang-key="footerMadeWith">Feito com ❤️ e Tailwind CSS.</p>
         </div>
@@ -186,12 +192,12 @@
                 aboutMeText: "Sou Davi Silva Galindo, um desenvolvedor web junior apaixonado por tecnologia e em busca de minha primeira experiência profissional na área. Atualmente, sou estudante de Sistemas de Informação na Universidade Federal Fluminense (UFF), onde aprofundo meus conhecimentos em diversas vertentes do desenvolvimento. Possuo soft skills em administração, adquiridas através de um curso técnico, que me permitem ter uma visão estratégica e organizacional na resolução de problemas. Estou sempre buscando aprender e aplicar novas tecnologias para criar soluções eficientes e de alta qualidade.",
                 skillsTitle: "Habilidades",
                 projectsTitle: "Meus Projetos",
-                project1Title: "Nome do Projeto 1",
-                project1Description: "Uma breve descrição do Projeto 1, destacando as principais funcionalidades e o problema que ele resolve.",
-                project2Title: "Nome do Projeto 2",
-                project2Description: "Uma breve descrição do Projeto 2, suas principais funcionalidades e as tecnologias utilizadas.",
-                project3Title: "Nome do Projeto 3",
-                project3Description: "Uma breve descrição do Projeto 3, com foco nos resultados obtidos ou insights gerados.",
+                project1Title: "Em Desenvolvimento", // Alterado para refletir o placeholder
+                project1Description: "--", // Alterado para refletir o placeholder
+                project2Title: "Em Desenvolvimento", // Alterado para refletir o placeholder
+                project2Description: "--", // Alterado para refletir o placeholder
+                project3Title: "Em Desenvolvimento", // Alterado para refletir o placeholder
+                project3Description: "--", // Alterado para refletir o placeholder
                 viewGithub: "Ver no GitHub",
                 viewDemo: "Ver Demo",
                 footerCopyright: "&copy; 2025 Davi Silva Galindo. Todos os direitos reservados.",
@@ -208,12 +214,12 @@
                 aboutMeText: "I'm Davi Silva Galindo, a junior web developer passionate about technology and seeking my first professional experience in the field. I am currently a Systems Information student at the Federal Fluminense University (UFF), where I deepen my knowledge in various aspects of development. I possess administrative soft skills, acquired through a technical course, which allow me to have a strategic and organizational vision in problem-solving. I am constantly seeking to learn and apply new technologies to create efficient and high-quality solutions.",
                 skillsTitle: "Skills",
                 projectsTitle: "My Projects",
-                project1Title: "Project Name 1",
-                project1Description: "A brief description of Project 1, highlighting its main features and the problem it solves.",
-                project2Title: "Project Name 2",
-                project2Description: "A brief description of Project 2, its main features and technologies used.",
-                project3Title: "Project Name 3",
-                project3Description: "A brief description of Project 3, focusing on the results obtained or insights generated.",
+                project1Title: "In Development", // Changed to reflect placeholder
+                project1Description: "--", // Changed to reflect placeholder
+                project2Title: "In Development", // Changed to reflect placeholder
+                project2Description: "--", // Changed to reflect placeholder
+                project3Title: "In Development", // Changed to reflect placeholder
+                project3Description: "--", // Changed to reflect placeholder
                 viewGithub: "View on GitHub",
                 viewDemo: "View Demo",
                 footerCopyright: "&copy; 2025 Davi Silva Galindo. All rights reserved.",
@@ -229,6 +235,7 @@
                 return;
             }
 
+            // Atualiza os textos dos elementos com a chave de idioma
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
                 if (translations[lang] && translations[lang][key]) {
@@ -236,22 +243,31 @@
                 }
             });
 
+            // Define o atributo lang do HTML e salva no localStorage
             document.documentElement.lang = lang;
             localStorage.setItem('selectedLanguage', lang);
 
+            // Atualiza os estilos dos botões de idioma
             document.querySelectorAll('.language-btn').forEach(btn => {
-                btn.classList.remove('active', 'bg-gray-600', 'text-white', 'bg-gray-500', 'text-gray-700', 'bg-blue-600', 'hover:bg-blue-500', 'bg-blue-500', 'hover:bg-blue-600');
+                // Remove todas as classes de estilo de estado ativo/inativo anteriores
+                btn.classList.remove('active', 'bg-gray-600', 'text-white', 'bg-gray-700', 'text-gray-300', 'hover:bg-gray-500');
 
                 if (btn.id === `lang-${lang}`) {
+                    // Aplica o estilo de estado ativo
                     btn.classList.add('active', 'bg-gray-600', 'text-white');
-                    btn.classList.remove('bg-gray-500', 'text-gray-700');
                 } else {
-                    btn.classList.add('bg-gray-500', 'text-gray-700');
+                    // Aplica o estilo de estado inativo e hover
+                    btn.classList.add('bg-gray-700', 'text-gray-300', 'hover:bg-gray-500');
                 }
             });
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Adiciona event listeners aos botões de idioma
+            document.getElementById('lang-pt').addEventListener('click', () => setLanguage('pt'));
+            document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+
+            // Define o idioma inicial com base no localStorage ou padrão para 'pt'
             const savedLanguage = localStorage.getItem('selectedLanguage');
             const initialLang = (savedLanguage && translations[savedLanguage]) ? savedLanguage : 'pt';
             setLanguage(initialLang);
